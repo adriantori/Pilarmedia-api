@@ -62,7 +62,7 @@ class AbsensiController extends Controller
     public function show($id)
     {
         //Cek Karyawan Spesifik
-        $absensi = Absensi::where('kary_id', $id)->firstOrFail();
+        $absensi = Absensi::where('kary_id', $id)->get();
         $response = [
             'message' => 'Detail Absensi Karyawan',
             'data' => $absensi

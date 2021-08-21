@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\AbsensiController;
+use App\Http\Controllers\CutiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,3 +31,8 @@ Route::post('/absensi/in/{id}',[AbsensiController::class, 'checkIn']);
 Route::put('/absensi/out/{id}',[AbsensiController::class, 'checkOut']);
 Route::get('/absensi/{id}',[AbsensiController::class, 'show']);
 Route::get('/absensi',[AbsensiController::class, 'index']);
+
+Route::get('/cuti',[CutiController::class, 'index']);
+Route::post('/cuti/create/{id}',[CutiController::class, 'store']);
+Route::put('/cuti/accept/{id}',[CutiController::class, 'accept']);
+Route::put('/cuti/decline/{id}',[CutiController::class, 'decline']);
